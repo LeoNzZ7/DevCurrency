@@ -1,4 +1,4 @@
-import style from './styles.module.css'
+import styles from './styles.module.css'
 
 export const Details = () => {
     return (
