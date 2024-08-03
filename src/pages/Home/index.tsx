@@ -23,16 +23,17 @@ interface CoinProps {
 
 export const Home = () => {
     const [input, setInput] = useState("")
-    const [coins, setCoins] = useState<CoinProps[]>()
+    const [coins, setCoins] = useState<CoinProps[]>([])
+    const [offset, setOffset] = useState(0)
 
     const navigate = useNavigate()
 
     useEffect(() => {
         getData();
-    }, [])
+    }, [offset])
 
     async function getData() {
-        await api.get("?limit=10&offset=0", {
+        await api.get(`?limit=10&offset=${offset}`, {
             params: {
                 apiKey: "63af9a05-58e7-4541-bbc2-e98352440e3e"
             }
@@ -57,9 +58,8 @@ export const Home = () => {
                 return formated;
             })
 
-            if (formatedResult) {
-                setCoins(formatedResult)
-            }
+            const listCoins = [...coins, ...formatedResult]
+            setCoins(listCoins)
         }).catch((error) => {
             console.log(error)
         })
@@ -75,7 +75,7 @@ export const Home = () => {
     }
 
     function handleGetMore() {
-
+        setOffset(offset + 10)
     }
 
     if (!coins) {

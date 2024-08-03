@@ -89,8 +89,9 @@ table td {
 
 .name {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
+  text-align: start;
 }
 
 .logo:hover {
