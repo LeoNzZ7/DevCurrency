@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+<h1>DevCurrency🪙</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>Descrição</h2>
 
-Currently, two official plugins are available:
+<p>DevCurrency é um projeto onde se pode visualizar dados sobre as principais criptomoedas do mercado. Desenvolvido em React e TypeScript, o aplicativo utiliza tecnologias como Axios, Toastify, SCSS, CSS Modules e consome a API da CoinCap. Você pode acessar o site através do link na Vercel: https://dev-currency-seven.vercel.app/.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Visualização de detalhes das criptomoedas
+- Atualização em tempo real das taxas de câmbio
+- Histórico de preços
+- Notificações personalizadas para criptomoedas não encontradas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- TypeScript
+- SCSS
+- CSS Modules
+- Axios
+- React Toastify
+- API CoinCap
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Instalação
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para rodar o projeto localmente, siga os passos abaixo:
+
+````
+1. Clone o repositório:
+   git clone https://github.com/seuprojeto/dev-currency.git
+
+2. Navegue até o diretório do projeto:
+   cd dev-currency
+
+3. Instale as dependências:
+   npm install
+
+4. Inicie o servidor de desenvolvimento:
+   npm run dev
+````
+## Contato
+
+Para mais informações ou suporte, entre em contato pelo email [leonardomartinha.dev@gmail.com](mailto:leonardomartinha.dev@gmail.com)
