@@ -1,30 +1,16 @@
 import { BsSearch } from 'react-icons/bs'
-import styles from './home.module.css'
+import styles from './home.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { FormEvent, useEffect, useState } from 'react'
 import api from '../../services/api'
-interface CoinProps {
-    id: string
-    name: string
-    symbol: string
-    rank: string
-    supply: string
-    maxSupply: string
-    marketCapUsd: string
-    volumeUsd24Hr: string
-    changePercent24Hr: string
-    vwap24hr: string
-    explorer: string
-    priceUsd: string
-    formatedPrice?: string
-    formatedMarket?: string
-    formatedVolume?: string
-}
+import { CoinProps } from '../../types/coinProps'
+import { LoadingIcon } from '../../components/loading'
 
 export const Home = () => {
     const [input, setInput] = useState("")
     const [coins, setCoins] = useState<CoinProps[]>([])
     const [offset, setOffset] = useState(0)
+    const [loading, setLoading] = useState(true)
 
     const navigate = useNavigate()
 
@@ -60,6 +46,7 @@ export const Home = () => {
 
             const listCoins = [...coins, ...formatedResult]
             setCoins(listCoins)
+            setLoading(false);
         }).catch((error) => {
             console.log(error)
         })
@@ -78,8 +65,10 @@ export const Home = () => {
         setOffset(offset + 10)
     }
 
-    if (!coins) {
-        return <h1>Carregando...</h1>
+    if (loading) {
+        return (
+            <LoadingIcon />
+        )
     }
 
     return (
